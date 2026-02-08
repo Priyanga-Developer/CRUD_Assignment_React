@@ -4,6 +4,7 @@ import { TextField, Stack, Paper } from "@mui/material";
 import SubmitButton from "./SubmitButton";
 import { useUsers } from "../hooks/useUsers";
 import { useToast } from "../context/ToastContext";
+import type { CreateUserInput } from "../types/users";
 
 export default function UserForm() {
   const { createUser } = useUsers();
@@ -11,7 +12,7 @@ export default function UserForm() {
 
   const submitUser = async (prevState: any, formData: FormData) => {
     try {
-      const data = Object.fromEntries(formData);
+      const data = Object.fromEntries(formData) as CreateUserInput;
 
       await createUser.mutateAsync(data);
 

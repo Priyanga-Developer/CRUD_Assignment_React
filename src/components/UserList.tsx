@@ -24,7 +24,7 @@ export default function UserList({ users, deleteMutation }: Props) {
   // If no users
   if (!users || users.length === 0) {
     return (
-      <Paper sx={{ p: 3, mt: 3 }}>
+      <Paper sx={{ p: 3,minHeight:"320px" }}>
         <Typography align="center">No users found</Typography>
       </Paper>
     );

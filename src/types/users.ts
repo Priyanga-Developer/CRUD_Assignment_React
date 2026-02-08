@@ -5,3 +5,5 @@ export type User = {
   phone: string;
   email: string;
 };
+
+export type CreateUserInput = Omit<User, "id">;

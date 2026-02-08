@@ -1,4 +1,5 @@
 import axios from "axios";
+import type { CreateUserInput } from "../types/users";
 
 const api = axios.create({
   baseURL: "http://localhost:3001"
@@ -9,7 +10,7 @@ export const getUsers = async () => {
   return res.data;
 };
 
-export const createUser = async (data:any) => {
+export const createUser = async (data:CreateUserInput) => {
   const res = await api.post("/users", data);
   return res.data;
 };
