@@ -10,7 +10,8 @@ export default function UserForm() {
   const { createUser } = useUsers();
   const { showToast } = useToast();
 
-  const submitUser = async (prevState: any, formData: FormData) => {
+  const submitUser = async (_prevState: any, formData: FormData) => {
+    
     try {
       const data = Object.fromEntries(formData) as CreateUserInput;
 
@@ -26,7 +27,7 @@ export default function UserForm() {
     }
   };
 
-  const [state, formAction] = useActionState(submitUser, null);
+  const [, formAction] = useActionState(submitUser, null);
 
   return (
     <Paper sx={{ padding: 3 }}>
