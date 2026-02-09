@@ -2,7 +2,8 @@ import axios from "axios";
 import type { CreateUserInput } from "../types/users";
 
 const api = axios.create({
-  baseURL: "http://localhost:3001"
+  // baseURL: "http://localhost:3001"
+  baseURL: "https://69897692c04d974bc69f54a9.mockapi.io"
 });
 
 export const getUsers = async () => {
